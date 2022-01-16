@@ -4,7 +4,7 @@ name: Trigger Site Rebuild on a CRON Schedule
 on:
   schedule:
     # Runs "at minute 55 past every hour" (see https://crontab.guru)
-    - cron: '50 * * * *'
+    - cron: '10 * * * *'
 jobs:
   build:
     name: Trigger Send Email
@@ -20,7 +20,7 @@ jobs:
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
-          to: hikmetcanizmir@gmail.com,hikmet.koseoglu@boun.edu.tr
+          to: hikmet.koseoglu@boun.edu.tr,hikmetkoseogludev@gmail.com
           # Required sender full name (address can be skipped):
           from: Hikmet Can Koseoglu # <user@example.com>
           # Optional whether this connection use TLS (default is true if server_port is 465)

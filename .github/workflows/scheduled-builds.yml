@@ -22,7 +22,7 @@ jobs:
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
-          to: hikmet.koseoglu@boun.edu.tr,hikmetkoseogludev@gmail.com
+          to: hikmetkoseogludev@gmail.com,hikmet.koseoglu@boun.edu.tr
           # Required sender full name (address can be skipped):
           from: Hikmet Can Koseoglu # <user@example.com>
           # Optional whether this connection use TLS (default is true if server_port is 465)

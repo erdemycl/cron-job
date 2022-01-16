@@ -1,6 +1,8 @@
 name: Workflow for checking http status codes
 
-on: [push]
+on:
+  schedule:
+    - cron: '30 * * * *'
 
 jobs:
   build:

@@ -1,0 +1,17 @@
+ame: Workflow for checking http status codes
+
+on:
+  schedule:
+    - cron: '30 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # ... uses ....
+    - name: Check http status code of production site
+      uses: lakuapik/gh-actions-http-status@v1
+      with:
+        sites: '["http://deprem.francecentral.cloudapp.azure.com:8080/survey/questionlist"]'
+        expected: '[200, 500]'
+    # ... uses ....

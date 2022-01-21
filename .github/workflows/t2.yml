@@ -18,9 +18,9 @@ jobs:
           ls ${{ github.workspace }}
           http_response=$(curl -s -o response.txt -w "%{http_code}" http://deprem.francecentral.cloudapp.azure.com:8080/survey/questionlist2)
           if [ $http_response != "200" ]; then
-              echo "error && exit 1"
+              exit 1
           else
-              exit 1    
+              echo "OK"
           fi          
       - run: echo "🍏 This job's status is ${{ job.status }}."
 

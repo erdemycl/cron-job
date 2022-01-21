@@ -8,11 +8,4 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    -run: /
-      http_response=$(curl -s -o response.txt -w "%{http_code}" http://deprem.francecentral.cloudapp.azure.com:8080/survey/questionlist)
-      if [ $http_response != "200" ]; then
-          echo "exit 1"
-      else
-          echo "OK"    
-      fi
- 
+    -run: echo "erdem"

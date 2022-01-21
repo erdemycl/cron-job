@@ -1,7 +1,7 @@
-name: GitHub Actions Demo
+name: Deprem uygulamasi ayakta mi
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '5 * * * *'
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -16,7 +16,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-          http_response=$(curl -s -o response.txt -w "%{http_code}" http://deprem.francecentral.cloudapp.azure.com:8080/survey/questionlist2)
+          http_response=$(curl -s -o response.txt -w "%{http_code}" http://deprem.francecentral.cloudapp.azure.com:8080/survey/questionlist)
           if [ $http_response != "200" ]; then
               exit 1
           else

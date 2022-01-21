@@ -2,7 +2,7 @@ ame: Workflow for checking http status codes
 
 on:
   schedule:
-    - cron: '30 * * * *'
+    - cron: '1 * * * *'
 
 jobs:
   build:
@@ -10,8 +10,10 @@ jobs:
     steps:
     # ... uses ....
     - name: Check http status code of production site
-      uses: lakuapik/gh-actions-http-status@v1
-      with:
-        sites: '["http://deprem.francecentral.cloudapp.azure.com:8080/survey/questionlist"]'
-        expected: '[200, 500]'
+http_response=$(curl -s -o response.txt -w "%{http_code}" http://deprem.francecentral.cloudapp.azure.com:8080/survey/questionlist2)
+if [ $http_response != "200" ]; then
+    echo "error"
+else
+    echo "OK"    
+fi
     # ... uses ....

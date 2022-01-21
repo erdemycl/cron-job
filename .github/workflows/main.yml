@@ -10,10 +10,11 @@ jobs:
     steps:
     # ... uses ....
     - name: Check http status code of production site
-http_response=$(curl -s -o response.txt -w "%{http_code}" http://deprem.francecentral.cloudapp.azure.com:8080/survey/questionlist2)
-if [ $http_response != "200" ]; then
-    echo "error"
-else
-    echo "OK"    
-fi
-    # ... uses ....
+    run: /
+      http_response=$(curl -s -o response.txt -w "%{http_code}" http://deprem.francecentral.cloudapp.azure.com:8080/survey/questionlist2)
+      if [ $http_response != "200" ]; then
+          echo "exit 1"
+      else
+          echo "OK"    
+      fi
+ 

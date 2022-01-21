@@ -20,7 +20,7 @@ jobs:
           if [ $http_response != "200" ]; then
               echo "error && exit 1"
           else
-              echo "OK"    
+              exit 1    
           fi          
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
